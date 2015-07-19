@@ -13,4 +13,4 @@ The command line options are identical, except now the user can specify --picks1
 
 ##Example command
 
-</pre>ApTiltPicker_import.py -1 data/rawu049b.mrc -2 data/rawu048b.mrc --picks1=data/picks1_import.spi --picks2=data/picks2_import.spi --output=data/outputpicks_import.spi</pre> 
+```ApTiltPicker_import.py -1 data/rawu049b.mrc -2 data/rawu048b.mrc --picks1=data/picks1_import.spi --picks2=data/picks2_import.spi --output=data/outputpicks_import.spi``` 
