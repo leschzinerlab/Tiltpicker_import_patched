@@ -45,7 +45,8 @@ Using the python script *make_tilt_pair_file.py* to create a text file listing e
 
 ***Input options:***
 ```
-$ ./make_tilt_pair_file.py                                                    Usage: make_tilt_pair_file.py -p <path/to/images> -o <output> --Uext=[untiltExtension] --Text=[tiltExtension]
+$ ./make_tilt_pair_file.py                                                    
+Usage: make_tilt_pair_file.py -p <path/to/images> -o <output> --Uext=[untiltExtension] --Text=[tiltExtension]
 
 Options:
   -h, --help     show this help message and exit
