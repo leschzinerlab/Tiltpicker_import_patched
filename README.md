@@ -14,3 +14,11 @@ The command line options are identical, except now the user can specify --picks1
 ##Example command
 
 ```ApTiltPicker_import.py -1 data/rawu049b.mrc -2 data/rawu048b.mrc --picks1=data/picks1_import.spi --picks2=data/picks2_import.spi --output=data/outputpicks_import.spi``` 
+
+**To import particles: **
+* Select 5 - 6 particles in both image that are the same
+* Click 'Theta' button then 'Run' to calculate tilt angle
+* Click 'Optimize' and then 'Run' (click run multiple times in a row) to calculate tilt axis properly.
+* Click 'Import' to insert particles
+* When finished, click 'Forward' and the aligned picks will be saved automatically into the specified output file
+
