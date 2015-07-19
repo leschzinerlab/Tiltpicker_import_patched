@@ -11,11 +11,16 @@ A patched ApTiltPicker.py that allows users to import particle coordinates and a
 
 The command line options are identical, except now the user can specify --picks1 and --picks2, which will be files containing the center coordinates (X and Y) of particles for the untilted and tilted micrographs. Example coordinate files can be found the data folder as data/picks1_import.spi and data/picks2_import.spi. 
 
-##Example command
+###New command line options: 
+* *--picks1=* Coordinate file for left image
+* *--picks2=* Coordinate file for right image
+* *--output=* Output file into which coordinates will be saved automatically
 
+##Example command
+To see how this works, here is an example command using the original data provided by Neil:
 ```ApTiltPicker_import.py -1 data/rawu049b.mrc -2 data/rawu048b.mrc --picks1=data/picks1_import.spi --picks2=data/picks2_import.spi --output=data/outputpicks_import.spi``` 
 
-**To import particles: **
+**To import particles:**
 * Select 5 - 6 particles in both image that are the same
 * Click 'Theta' button then 'Run' to calculate tilt angle
 * Click 'Optimize' and then 'Run' (click run multiple times in a row) to calculate tilt axis properly.
