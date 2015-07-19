@@ -44,7 +44,8 @@ Example files:
 Using the python script *make_tilt_pair_file.py* to create a text file listing each tilt mate from your dataset.
 
 ***Input options:***
-```$ ./make_tilt_pair_file.py                                                    Usage: make_tilt_pair_file.py -p <path/to/images> -o <output> --Uext=[untiltExtension] --Text=[tiltExtension]
+```
+$ ./make_tilt_pair_file.py                                                    Usage: make_tilt_pair_file.py -p <path/to/images> -o <output> --Uext=[untiltExtension] --Text=[tiltExtension]
 
 Options:
   -h, --help     show this help message and exit
@@ -53,7 +54,8 @@ Options:
   --Uext=STRING  Untilted micrograph extension (e.g. '00', 'u')
   --Text=STRING  Tilted micrograph extension (e.g. '01', 't')
   --leginon      Flag if tilt mates came from leginon
-  -d             debug```
+  -d             debug
+  ```
 
 Example command: 
 ```./make_tilt_pair_file.py -p data/ -o data/rct_tiltpair.txt --Uext=049b --Text=048b```
@@ -66,7 +68,8 @@ data/rawu049b.mrc	data/rawu048b.mrc```
 To loop over all micrographs listed in the newly created text file, you can run the command ***runApTiltPicker_import.py***. 
 
 ***Input options:***
-```$ ./runApTiltPicker_import.py 
+```
+$ ./runApTiltPicker_import.py 
 Usage: runApTiltPicker_import.py -i <input micrograph> -t <template imagic stack> --apixMicro=[pixel size] --apixTemplate=[pixel size] --boxsize=[box] --diam=[particle diameter] --thresh=[threshold] --mirror --bin=<bin> --all='wildcard'
 
 Options:
@@ -79,7 +82,8 @@ Options:
   --extract        Flag to extract particles into unbinned particle stacks
   --output=STRING  OPTIONAL: If extracting particles, specify output base name
                    of stacks (Default=output_stack).
-  -d               debug```
+  -d               debug
+  ```
 
 Example command: 
 ```$ ./runApTiltPicker_import.py --micros=data/rct_tiltpair.txt --binning=2 --microdims=1600 --box=80 --extract --output=data/raw_stack```
