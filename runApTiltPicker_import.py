@@ -127,6 +127,16 @@ def runTiltPicker(params,aptiltpath):
 		if params['debug'] is True:
 			print 'Scaling factor = %f' %(MultiFactor)
 
+		if os.path.exists('%s_tiltPicked.box' %(tiltmicro[:-4])):
+                	print 'Tilted micrograph %s has already been processed. Skipping these tilt mates.'%(tiltmicro)
+			i = i + 1
+			continue
+
+		if os.path.exists('%s_tiltPicked.box' %(untiltmicro[:-4])):
+			print 'Untilted micrograph %s has already been picked and aligned. Skipping these tilt mates.' %(untiltmicro)
+                        i = i + 1
+                        continue
+
 		#Bin micrographs & box files
 		boxFileManipulator('%s.box' %(untiltmicro[:-4]),MultiFactor,untiltbox)
 		boxFileManipulator('%s.box' %(tiltmicro[:-4]),MultiFactor,tiltbox)
@@ -160,12 +170,6 @@ def runTiltPicker(params,aptiltpath):
 			print 'There were only %i particle picks for %s and %s tiltmates, no coordinates will be written. Continuing onto next micrograph.' %((len(open('temp_aptiltout.spi','r').readlines())-24)/2,untiltmicro,tiltmicro)
 			i = i + 1
 			continue
-
-		#Check that new output files don't exist
-		if os.path.exists('%s_tiltPicked.box' %(tiltmicro[:-4])):
-			shutil.move('%s_tiltPicked.box' %(tiltmicro[:-4]),'%s_tiltPicked_conflict%i.box' %(tiltmicro[:-4],int(time.time())))
-		if os.path.exists('%s_tiltPicked.box' %(untiltmicro[:-4])):
-			shutil.move('%s_tiltPicked.box' %(untiltmicro[:-4]),'%s_tiltPicked_conflict%i.box' %(untiltmicro[:-4],int(time.time())))
 
 		#Parse aptilt output spider file
 		parseApTilt('temp_aptiltout.spi',params['box'],params['binning'],'%s_tiltPicked.box' %(untiltmicro[:-4]),'%s_tiltPicked.box' %(tiltmicro[:-4]),params['microdims'],params['debug'])	
